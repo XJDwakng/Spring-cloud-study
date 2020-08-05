@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: config-single-client
+  cloud:
+    config:
+      profile: prod
+      label: master
+      uri: http://localhost:9000
+server:
+  port: 9091
