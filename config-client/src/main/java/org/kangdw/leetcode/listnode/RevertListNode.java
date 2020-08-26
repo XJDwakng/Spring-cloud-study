@@ -1,9 +1,16 @@
 package org.kangdw.leetcode.listnode;
 
-public class RevertListNode {
-    public ListNode reverseList(ListNode head) {
+import java.util.Stack;
 
-        return null;
+public class RevertListNode {
+    //1 ->2 ->3->null
+    //3 ->2 ->1 ->null
+    public Node reverseList(Node head) {
+        Node node = head.next;                 //12345   2345  345  45  5
+        if (node.next != null) {
+            reverseList(node);
+        }
+        return node.next=new Node(head.val);
     }
 
     public static void main(String[] args) {
@@ -13,6 +20,11 @@ public class RevertListNode {
         listNode.addNode(3);
         listNode.addNode(2);
         listNode.addNode(1);
-        System.out.println(listNode.size()+"-------------");
+        System.out.println(listNode.size() + "-------------");
+        Stack<Integer>  stack=new Stack();
+        stack.push(1);
+
     }
+
+
 }
