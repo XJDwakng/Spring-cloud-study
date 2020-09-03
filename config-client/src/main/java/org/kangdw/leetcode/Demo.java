@@ -68,6 +68,24 @@ public class Demo {
     public static void main(String[] args) {
         int a []={1,0,0,0,1};
         boolean b = canPlaceFlowers(a, 2);
+        int c =123;
+        System.out.println(-13%10);
+        System.out.println(reverse(c));
+    }
+    public static  int reverse(int x) {
+        int reverse=0;
+        while(x!=0){
+            int b=x%10;
+            if(x>0 && reverse > (Integer.MAX_VALUE-b)/10){
+                return 0;
+            }
+            if(x<0 && reverse < (Integer.MIN_VALUE-b)/10){
+                return 0;
+            }
+            reverse=reverse*10 + b;
+            x=x/10;
 
+        }
+        return reverse;
     }
 }
